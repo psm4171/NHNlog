@@ -1,0 +1,17 @@
+
+0
+java:S1220""Move this file to a named package.
+V	java:S125"<This block of commented-out lines of code should be removed.(£Æ×Åùÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(Þñ¨¼
+E	java:S106"+Replace this use of System.out by a logger.(€¦œŒýÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(¤Óôÿÿÿÿÿ
+Q	java:S125 "<This block of commented-out lines of code should be removed.(ïª¦
+@	java:S106-"+Replace this use of System.out by a logger.(Òƒý±
+Q	java:S1255"<This block of commented-out lines of code should be removed.(ÂØßõ
+E	java:S1069"+Replace this use of System.out by a logger.(Å­ËÝúÿÿÿÿ
+L
+java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉÐšùÿÿÿÿ
+E
+java:S1128"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ
+<
+java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ
