@@ -1,0 +1,14 @@
+
+0
+java:S1220""Move this file to a named package.
+P
+java:S2209"5Change this instance-reference to a static reference.(Êëÿúÿÿÿÿ
+@	java:S106	"+Replace this use of System.out by a logger.(ûâ¾
+P
+java:S2209"5Change this instance-reference to a static reference.(·‡‰çùÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(¶éÕŞÿÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(—Ûóäûÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(Àá³ˆúÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(Õá´ğùÿÿÿÿ
+P
+java:S2209"5Change this instance-reference to a static reference.(Àá³ˆúÿÿÿÿ

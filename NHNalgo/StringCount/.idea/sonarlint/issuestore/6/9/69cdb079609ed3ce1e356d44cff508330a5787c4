@@ -1,0 +1,8 @@
+
+7
+java:S1220""Move this file to a named package.8â©İé¦1
+G	java:S106"+Replace this use of System.out by a logger.(ı¯‚¯8ÿ«İé¦1
+L	java:S106"+Replace this use of System.out by a logger.(ÆÙÏúúÿÿÿÿ8¬İé¦1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(æ¼¡„üÿÿÿÿ8‡¬İé¦1
+X	java:S125/"<This block of commented-out lines of code should be removed.(öƒ°®8Œ¬İé¦1

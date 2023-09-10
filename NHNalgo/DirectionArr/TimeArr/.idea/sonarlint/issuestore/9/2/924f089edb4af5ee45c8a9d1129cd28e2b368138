@@ -1,0 +1,10 @@
+
+7
+java:S1220""Move this file to a named package.8§ ‘–¦1
+[
+java:S1226?">Introduce a new variable instead of reusing the parameter "n".(¬ğÂ8¨ ‘–¦1
+L	java:S106+"+Replace this use of System.out by a logger.(šêëıÿÿÿÿ8« ‘–¦1
+L	java:S106."+Replace this use of System.out by a logger.(ÿ¶ª¸úÿÿÿÿ8« ‘–¦1
+W	java:S125G"<This block of commented-out lines of code should be removed.(ùŸĞX8£†¢–¦1
+L	java:S106K"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8­ ‘–¦1
+L	java:S106M"+Replace this use of System.out by a logger.(¬Ÿ…¡úÿÿÿÿ8­ ‘–¦1

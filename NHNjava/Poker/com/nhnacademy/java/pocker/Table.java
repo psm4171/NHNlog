@@ -58,7 +58,7 @@ public class Table {
             }
 
             else
-                System.out.println("유저 1과 유저2는 비겼습니다.");
+                System.out.println("유저 1과 유저 2는 비겼습니다.");
 
         }
     }

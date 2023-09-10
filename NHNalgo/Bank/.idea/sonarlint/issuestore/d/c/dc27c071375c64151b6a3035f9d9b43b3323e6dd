@@ -1,0 +1,12 @@
+
+v
+java:S1104"YMake accountNumber a static final constant or non-public and provide accessors if needed.(ìàí8ÖÜ‘£¦1
+r
+java:S1104"UMake ownerName a static final constant or non-public and provide accessors if needed.(ôİ™«8ÖÜ‘£¦1
+u
+java:S1104"SMake balance a static final constant or non-public and provide accessors if needed.(Ø±‡˜úÿÿÿÿ8ÖÜ‘£¦1
+7
+java:S1220""Move this file to a named package.8ÖÜ‘£¦1
+X	java:S125"<This block of commented-out lines of code should be removed.(¦ª¡„8ØÜ‘£¦1
+Q
+java:S2200J"/Only the sign of the result should be examined.(‰ØÜğÿÿÿÿÿ8ÚÜ‘£¦1

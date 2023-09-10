@@ -1,6 +1,5 @@
 package com.nhnacademy.java.pocker;
 
-import java.util.ArrayList;
 
 public class Card {
     private Suit suit;

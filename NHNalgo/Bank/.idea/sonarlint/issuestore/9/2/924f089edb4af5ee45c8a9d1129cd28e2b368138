@@ -1,0 +1,13 @@
+
+7
+java:S1220""Move this file to a named package.8¯À«¢¦1
+]	java:S125"<This block of commented-out lines of code should be removed.(»ž•ûÿÿÿÿ8±À«¢¦1
+G	java:S106"+Replace this use of System.out by a logger.(é¯à‘8²À«¢¦1
+G	java:S106"+Replace this use of System.out by a logger.(¯û½³8²À«¢¦1
+G	java:S106 "+Replace this use of System.out by a logger.(óíß‰8²À«¢¦1
+W
+java:S1854$"5Remove this useless assignment to local variable "b".(ø«–Ðýÿÿÿÿ8Üˆ¸¢¦1
+H
+java:S1481$"&Remove this unused "b" local variable.(ø«–Ðýÿÿÿÿ8Ýˆ¸¢¦1
+C
+java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ8£àÔ¢¦1

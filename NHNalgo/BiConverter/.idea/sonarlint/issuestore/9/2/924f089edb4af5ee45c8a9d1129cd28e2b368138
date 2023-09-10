@@ -1,0 +1,13 @@
+
+>
+java:S1643"Use a StringBuilder instead.(¬¸ú¦úÿÿÿÿ8ªøŠÅ¦1
+7
+java:S1220""Move this file to a named package.8ªøŠÅ¦1
+W
+java:S1854"5Remove this useless assignment to local variable "n".(ìÊüÿÿÿÿ8¯øŠÅ¦1
+H
+java:S1481"&Remove this unused "n" local variable.(ìÊüÿÿÿÿ8ÄøŠÅ¦1
+L	java:S106	"+Replace this use of System.out by a logger.(‚ŞÏ¥ıÿÿÿÿ8ÄøŠÅ¦1
+i	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—·ŞG8ÄøŠÅ¦1
+J
+java:S1481"(Remove this unused "oct" local variable.(¯Ö¢»üÿÿÿÿ8ÅøŠÅ¦1

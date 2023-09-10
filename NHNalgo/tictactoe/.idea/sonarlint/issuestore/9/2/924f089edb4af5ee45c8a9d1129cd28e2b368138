@@ -1,0 +1,49 @@
+
+z	java:S135U"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆžÿÿÿÿÿ8•Ìç±¦1
+Y
+java:S4973"<Strings and Boxed types should be compared using "equals()".(»‡à¿8–Ìç±¦1
+Y
+java:S4973"<Strings and Boxed types should be compared using "equals()".(»‡à¿8–Ìç±¦1
+Y
+java:S4973"<Strings and Boxed types should be compared using "equals()".(»‡à¿8–Ìç±¦1
+^
+java:S4973"<Strings and Boxed types should be compared using "equals()".(õØ»½øÿÿÿÿ8–Ìç±¦1
+^
+java:S4973"<Strings and Boxed types should be compared using "equals()".(õØ»½øÿÿÿÿ8–Ìç±¦1
+^
+java:S4973"<Strings and Boxed types should be compared using "equals()".(õØ»½øÿÿÿÿ8–Ìç±¦1
+Y
+java:S4973""<Strings and Boxed types should be compared using "equals()".(èˆö8–Ìç±¦1
+Y
+java:S4973""<Strings and Boxed types should be compared using "equals()".(èˆö8–Ìç±¦1
+Y
+java:S4973""<Strings and Boxed types should be compared using "equals()".(èˆö8–Ìç±¦1
+Y
+java:S4973&"<Strings and Boxed types should be compared using "equals()".(ÅàÃÄ8–Ìç±¦1
+Y
+java:S4973&"<Strings and Boxed types should be compared using "equals()".(ÅàÃÄ8–Ìç±¦1
+Y
+java:S4973&"<Strings and Boxed types should be compared using "equals()".(ÅàÃÄ8–Ìç±¦1
+^
+java:S4973:"<Strings and Boxed types should be compared using "equals()".(µˆ ïûÿÿÿÿ8–Ìç±¦1
+^
+java:S4973]"<Strings and Boxed types should be compared using "equals()".(îÄÆÿûÿÿÿÿ8–Ìç±¦1
+7
+java:S1220""Move this file to a named package.8–Ìç±¦1
+A
+java:S1659"Declare "j" on a separate line.(¦¢Éëùÿÿÿÿ8øÌç±¦1
+L	java:S106"+Replace this use of System.out by a logger.(éõÕÍýÿÿÿÿ8øÌç±¦1
+L	java:S106"+Replace this use of System.out by a logger.(ÚŒù²ùÿÿÿÿ8øÌç±¦1
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áþÿÿÿÿ8øÌç±¦1
+@
+java:S21195"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8ùÌç±¦1
+A
+java:S1659D"Declare "j" on a separate line.(¦¢Éëùÿÿÿÿ8úÌç±¦1
+L	java:S106I"+Replace this use of System.out by a logger.(Œ™øäýÿÿÿÿ8ûÌç±¦1
+L	java:S106V"+Replace this use of System.out by a logger.(Î×³ûùÿÿÿÿ8ûÌç±¦1
+X	java:S125["<This block of commented-out lines of code should be removed.(ËÑŠ•8ûÌç±¦1
+G	java:S106^"+Replace this use of System.out by a logger.(ä²—Â8ûÌç±¦1
+G	java:S106f"+Replace this use of System.out by a logger.(ß¨¯„8ûÌç±¦1
+G	java:S106k"+Replace this use of System.out by a logger.(Éöëå8üÌç±¦1
+L	java:S106u"+Replace this use of System.out by a logger.(‚Áê›ùÿÿÿÿ8üÌç±¦1
+L	java:S106x"+Replace this use of System.out by a logger.(¬ùÁÑûÿÿÿÿ8üÌç±¦1
