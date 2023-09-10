@@ -1,0 +1,9 @@
+
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Á½È8ÿ†‰×§1
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Æò™­8ÿ†‰×§1
+‡
+java:S1319"eThe type of "cards" should be an interface such as "List" rather than the implementation "ArrayList".(¶ã¤†şÿÿÿÿ8ÿ†‰×§1
+W	java:S125"<This block of commented-out lines of code should be removed.(ş¢œF8‰‡‰×§1
+X	java:S1259"<This block of commented-out lines of code should be removed.(ı¬æØ8‰‡‰×§1

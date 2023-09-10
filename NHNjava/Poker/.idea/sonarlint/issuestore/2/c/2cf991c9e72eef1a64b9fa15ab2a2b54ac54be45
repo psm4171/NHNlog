@@ -1,0 +1,15 @@
+
+{
+java:S2293 "YReplace the type specification in this constructor call with the diamond operator ("<>").(—İÌÊûÿÿÿÿ8‹°°Ó§1
+’
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¼Ç„áıÿÿÿÿ8ÇöƒÖ§1
+0
+java:S1700"Rename field "deck"(Û¨ëø8‹°°Ó§1
+F
+java:S2140")Use "java.util.Random.nextInt()" instead.(›‹Ó8’°°Ó§1
+]	java:S125""<This block of commented-out lines of code should be removed.(èà¨ñøÿÿÿÿ8“°°Ó§1
+L
+java:S1481+"*Remove this unused "index" local variable.(»¢é×ùÿÿÿÿ8“°°Ó§1
+]	java:S1255"<This block of commented-out lines of code should be removed.(¹óÿÿÿÿÿ8“°°Ó§1
+]	java:S125M"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿ8”°°Ó§1
+X	java:S125Y"<This block of commented-out lines of code should be removed.(ÏÜºô8”°°Ó§1
