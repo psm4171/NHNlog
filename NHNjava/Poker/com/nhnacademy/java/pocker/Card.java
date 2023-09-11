@@ -26,24 +26,4 @@ public class Card {
     }
 
 
-
-    //    public Card(String suit, int rank){
-//        this.suit = suit;
-//        this.rank = rank;
-//    }
-
-//    public String getSuit(){
-//        return this.suit;
-//    }
-
-//        public Suit getSuit(){
-//        return this.suit;
-//    }
-//
-//    public void setSuit(){
-//        this.suit = suit;
-//    }
-
-
-
 }

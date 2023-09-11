@@ -14,7 +14,7 @@ public class Table {
 
         System.out.println("각 유저들에게 나눠준 카드는 다음과 같습니다. ");
 
-        user1.setDeck(deck.toUser());
+        user1.setDeck(deck.toUser()); // 유저의
         user2.setDeck(deck.toUser());
 
         System.out.println("유저 1의 카드 : " + user1);

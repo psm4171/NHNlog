@@ -31,7 +31,6 @@ public class User {
 
       }
 
-
           if (countPair == 1) {
               return Rank.OnePair;
           } else if (countPair == 2) {

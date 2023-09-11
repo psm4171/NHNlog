@@ -1,0 +1,11 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(´®ŒÎ8ÕôåØ¤1
+T
+java:S1874"2Remove this use of "withHeader"; it is deprecated.(¥÷ÿŠùÿÿÿÿ8ÖôåØ¤1
+X	java:S125 "<This block of commented-out lines of code should be removed.(Ê¨Úé8×ôåØ¤1
+G	java:S106#"+Replace this use of System.out by a logger.(¸Š˜Í8¯çØ¤1
+]	java:S125-"<This block of commented-out lines of code should be removed.(²­ÌŸûÿÿÿÿ8×ôåØ¤1
+@
+java:S1128"$Remove this unused import 'java.io'.(¬›ãD8”©æØ¤1
+F
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8”©æØ¤1
