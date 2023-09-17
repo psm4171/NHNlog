@@ -1,0 +1,7 @@
+
+N
+java:S1172",Remove this unused method parameter "count".(åºí¦ýÿÿÿÿ8—îß’©1
+{
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8˜îß’©1
+L	java:S106"+Replace this use of System.out by a logger.(‰„ãÿþÿÿÿÿ8˜îß’©1
+X	java:S125"<This block of commented-out lines of code should be removed.(Û»î²8˜îß’©1

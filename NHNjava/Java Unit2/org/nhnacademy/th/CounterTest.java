@@ -1,6 +1,6 @@
 package org.nhnacademy.th;
 
-public class Main1 {
+public class CounterTest {
     public static void main(String [] args){
         Counter counter = new Counter("Counter",0);
        // Counter counter2 = new Counter("Counter2",0);

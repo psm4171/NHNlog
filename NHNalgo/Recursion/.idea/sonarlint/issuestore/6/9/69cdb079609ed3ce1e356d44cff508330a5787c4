@@ -1,0 +1,15 @@
+
+m
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(³›¯°ùÿÿÿÿ8¥‘†²©1
+m
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(³›¯°ùÿÿÿÿ8¥‘†²©1
+7
+java:S1220""Move this file to a named package.8¥‘†²©1
+G	java:S106"+Replace this use of System.out by a logger.(ÎåŒÈ8ª‘†²©1
+G	java:S106"+Replace this use of System.out by a logger.(Ê´Ö©8ª‘†²©1
+G	java:S106"+Replace this use of System.out by a logger.(Ö½Ê8ª‘†²©1
+L	java:S106"+Replace this use of System.out by a logger.(‘è³Êıÿÿÿÿ8«‘†²©1
+C	java:S131""Add a default case to this switch.(³›¯°ùÿÿÿÿ8«‘†²©1
+C	java:S131""Add a default case to this switch.(³›¯°ùÿÿÿÿ8«‘†²©1
+j	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä»áı8«‘†²©1
+j	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ŠÓ8¬‘†²©1
