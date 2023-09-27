@@ -1,0 +1,47 @@
+== Unit 7 Arrays and matrices
+
+배열 객체는 동일한 유형의 요소 컬렉션을 포함하며, 각 요소는 인덱스로
+식별된다. 배열 유형의 변수는 배열 객체에 대한 참조를 포함한다.
+
+—> 배열을 사용할 때, 실제 배열 데이터를 직접 포함하지 않고, 대신에 배열
+객체에 대한 참조를 가지는 것을 의미
+
+즉, 변수는 배열에 저장된 데이터를 직접 가지고 있는 것이 아니라, 배열
+객체의 위치를 가리키는 참조를 가진다.
+
+=== Creation of an array object
+
+.스크린샷 2023-09-22 오전 10.24.48.png
+image::https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/58390d9e-d588-4b7c-8867-0530145d4d29/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-09-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.24.48.png[스크린샷
+2023-09-22 오전 10.24.48.png]
+
+배열의 각 요소는 해당 데이터 유형의 기본값으로 초기화된다.
+
+=== Access to the single elements of an array
+
+It is very important to remember that, when an array contains N
+elements. 배열의 인덱스는 [0, N-1]
+
+=== Number of elements of an array: instance variable length
+
+length는 배열의 공용 인스턴스 변수(수정 불가능)를 포함한다. 배열의 요소
+수를 얻을 수 있다.
+
+=== Expressions that denote array objects
+
+[source,java]
+----
+int [] v = {4, 6, 3, 1};
+// int [] v = new int[4];
+for (int i = 0; i < 4; i++) {
+        System.out.print(v[i] + " ");
+}
+----
+
+=== Access to the elements of a matrix
+
+.스크린샷 2023-09-25 오전 12.21.42.png
+image::https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/9231b926-1380-4390-8f06-26c2c64c1dfb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-09-25_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.21.42.png[스크린샷
+2023-09-25 오전 12.21.42.png]
+
+=== Number of rows and columns of a matrix
