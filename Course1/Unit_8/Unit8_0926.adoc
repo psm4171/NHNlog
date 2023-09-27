@@ -1,0 +1,104 @@
+== Unit 8 File I/O
+
+Files can contain::
+  Data, 프로그램에 의해 해석될 수 있는 형태
+
+(파일 읽기, 쓰기, 이름 변경, 삭제 등)작업은 운영 체제의 파일 관리 기능을
+사용하여 수행
+
+=== Exceptions
+
+메서드가 발생시킬 수 있는 예외의 종류는 메서드 본문 앞에 추가해야 하는
+throws 절에 명시
+
+=== Writing text files
+
+FileWriter의 생성자 호출시 준비가 된 파일이 생성.
+
+[source,java]
+----
+FileWriter f = new FileWriter("test1.txt");
+PrintWriter out = new PrintWriter(f);
+out.println("hello world!");
+
+out.close();
+f.close();
+----
+
+[source,java]
+----
+BufferedReader in = new BufferedReader(f);
+
+String line = in.readLine();
+while(line != null) {
+
+    line = in.readLine();
+}
+
+루프 스키마는 파일의 라인을 반복하는 것을 나타낸다.
+실제로, readLine 메서드는 파일에서 읽을 데이터가 없을 때 (예: 파일 끝에 도달한 경우) null 값을 반환.
+이러한 조건은 루프의 종료를 확인하기 위해 사용됩니다.
+----
+
+.스크린샷 2023-09-25 오후 4.05.47.png
+image::https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/f1c9eb1a-ec48-4c71-9987-282488e43bda/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-09-25_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.05.47.png[스크린샷
+2023-09-25 오후 4.05.47.png]
+
+* 파일 작성하는 것 : FileWriter 클래스의 객체 생성
+* 파일 읽어오는 것 : FileReader 클래스의 객체 생성
+
+=== Input Streams
+
+KeyBoard: InputStream is = System.in;
+
+*File: FileInputStream is = new FileInputStream(”data.txt”);*
+
+=== Output Streams
+
+We create an object of the class FileOutputStream (subclass
+ofOutputStream) associated to the File object that identifies the file
+to open for writing.
+
+*FileOutputStream os = new FileOutputStream(``data.txt'');*
+
+[arabic]
+. *파일 읽기 기능:* **`FileInputStream`**은 파일로부터 데이터를
+읽어오는데 사용된다. 파일 내용을 바이트 단위로 읽을 수 있다.
+. *바이트 스트림:* **`FileInputStream`**은 바이트 스트림을 읽는
+클래스로, 파일의 내용을 바이트 배열로 읽는다.
+
+입력 스트림에서 읽고 출력 스트림으로 쓰는 작업은 표준화되어 있으며, 즉
+사용 중인 특정 스트림에 의존하지 않습는다. 이것은 키보드, 파일 또는
+인터넷에서 문자열을 읽을 때 동일한 Java 문을 사용할 수 있다는 것을
+의미한다.
+
+.스크린샷 2023-09-25 오후 4.05.47.png
+image::https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/b91c7d77-e898-420b-ade6-cd352433e17a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-09-25_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.05.47.png[스크린샷
+2023-09-25 오후 4.05.47.png]
+
+=== Reading from an input stream and writing to an output stream
+
+.스크린샷 2023-09-26 오전 8.51.31.png
+image::https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/76714391-efab-427d-b2fc-d3a3623fc4bb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-09-26_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.51.31.png[스크린샷
+2023-09-26 오전 8.51.31.png]
+
+*자바에서 텍스트 파일 또는 바이트 스트림에서 텍스트 데이터를 읽을 때
+사용되는* 클래스
+
+* **`InputStreamReader`**는 바이트 스트림을 문자 스트림으로 변환하는
+클래스
+
+InputStream 객체에서 바이트 데이터를 읽어와서 문자로 변환할 때 사용
+
+* **`BufferedReader`**는 텍스트를 한 줄씩 읽기 위한 버퍼링된 입력
+스트림을 제공하는 클래스
+
+*`InputStreamReader`* 또는 **`FileReader`**와 함께 사용되어 파일에서 한
+줄씩 효율적으로 읽을 수 있다.
+
+* 출력 작업은 내부적으로 출력 버퍼를 통해 처리되며, 사용자가 프로그램과
+상호 작용하는 관점에서 교차된 입력과 출력이 제대로 작동하려면 다음
+입력을 얻기 전에 출력 버퍼를 비워야 한다.
+
+—> OutputStream 객체에 연결된 flush() 메서드를 사용하여 출력 버퍼를
+비운다.

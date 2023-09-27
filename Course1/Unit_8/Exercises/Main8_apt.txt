@@ -1,0 +1,20 @@
+평 수 15
+주소 Seoul
+박가나 오나라 null null null null null null null null 
+평 수 9
+주소 Gwangu
+김다라 null null null null null null null null null 
+평 수 15
+주소 Seoul
+거주자 명단박가나 오나라 null null null null null null null null 
+평 수 9
+주소 Gwangu
+거주자 명단김다라 null null null null null null null null null 
+평 수 15
+주소 Seoul
+거주자 명단
+박가나 오나라 null null null null null null null null 
+평 수 9
+주소 Gwangu
+거주자 명단
+김다라 null null null null null null null null null 
