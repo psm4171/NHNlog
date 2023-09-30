@@ -1,0 +1,140 @@
+== Unit 9 Program errors and exception handling
+
+=== Types of program errors
+
+[arabic]
+. Syntax errors: errors due to the fact that the syntax of the language
+is not respected.
+. Semantic errors: errors due to an improper use of program statements.
+. Logical errors: errors due to the fact that the specification is not
+respected. From the point of view of when errors are detected, we
+distinguish:
+. Compile time errors: syntax errors and static semantic errors
+indicated by the compiler.
+. Runtime errors: dynamic semantic errors, and logical errors, that
+cannot be detected by the compiler (debugging).
+
+=== Errors detected by the compiler and runtime errors
+
+컴파일러에 의해 발견할 수 있는 오류 : 모든 구문 오류 + 일부의 의미론적
+오류(정적 의미론적 오류)
+
+오류의 유형과 오류가 발생한 자바 소스 파일의 위치를 나타내는 메시지를
+출력한다.
+
+정적 의미론적 오류는 프로그램의 의미적인 부분을 검사하는 오류 :
+
+타입 불일치 오류, 변수 미선언 오류, 함수 호출 미스매치 오류, 중복 정의
+오류
+
+단, 동적 의미론적 오류와 논리 오류는 컴파일러에 의해 감지되지 않고,
+프로그램이 실행될 때만 감지된다.
+
+동적 의미론적 오류는 프로그램이 실행 중에 발생하는 오류 :
+
+데이터 형식 오류, 배열 범위 오류, 널 포인터 예외, 예외 처리 오류, 무한
+루프, 메모리 누수
+
+=== Drivers for testing
+
+클래스나 메서드 정확성을 테스트하기 위해 사용되는 프로그램 부분.
+
+드라이버의 목적 : 클래스의 공개 인터페이스의 모든 메서드를 호출하고,
+명세를 준수하는지 확인하는 것 —> 테스트 코드를 작성하는 것
+
+런타임 에러를 감지하기 위해서는 프로그램 디버그가 필수적이다.
+
+프로그램 디버깅 → 코드에 출력문을 삽입해보거나, 디버거를 사용하여
+프로그램을 실행시킨다.
+
+디버거에 의해 프로그램 실행
+
+* 프로그램 문장 하나씩 실행
+* 사용자가 정의한 특정 지점(break point)에 도달할 때까지 프로그램 실행
+* 실행 중 언제든지 변수와 객체의 내용을 검사
+
+NumberFormatException :
+
+문자열에서 숫자로의 변환을 수행하는 메서드에서 발생하는 예외
+ex)Integer.parseInt
+
+* checked exception은 발생 가능한 메서드에서 throws 절에 언급되어야
+한다.
+* Unchecked exception은 RuntimeException의 하위 클래스의 객체.
+
+프로그램 실행 중 가상 머신에서 발생하는 예외를 의미한다.
+
+—> arithmetic exception, reference exception(null reference), exceptions
+when indexing an array
+
+throw 문은 throw문을 실행하는 메서드에서 시작하여, main 메서드까지
+거슬러 올라가는 메서드 종료 체인을 시작한다.
+
+—> 예외가 잡히면 프로그램 종료로 이어지는 chain of exceptions가
+중단된다.
+
+이를 처리하기 위해 try - catch - finally 구조를 사용
+
+try \{
+
+여기서 문장이 실행되어, 예외가 발생하면 예외를 잡는데 사용
+
+}
+
+catch () \{
+
+작성된 순서대로 평가되고, 발생한 예외가 지정된 클래스에 속할 때, 첫 번째
+절에 해당하는 catch 블록이 실행
+
+}
+
+finally \{
+
+어떠한 문장에서도 예외처리가 발생하지 않을 경우 실행됨
+
+}
+
+예외가 예외를 발생시키는 메서드에서 처리되지 않고, 예외를 발생시키는
+메서드를 호출하는 메서드에서 처리하는 형태
+
+예외는 더 이상 상위로 전파되지 않기 때문에, 첫 번째와 main 메서드는
+예외를 던진다고 선언할 필요가 없다.
+
+—> 중요한 특징 중 하나인 예외 핸들링과 예외 전파의 관련성
+
+*예외를 던진 메서드를 호출하는 메서드에서 처리하면, 예외가 더 이상 상위
+호출 스택으로 전파되지 않고 해당 메서드 내에서 해결*
+
+즉, 각 메서드가 자체적으로 예외 처리를 담당할 수 있으며, 호출 스택의
+다른 메서드에게 예외를 전파하지 않아도 된다.
+
+< *Exception Handling >*
+
+* 예외가 발생했을 때 이를 처리하는 메커니즘
+* 일반적으로 *`try-catch`* 블록을 사용하여 예외를 처리
+* 비정상 종료되는 것을 방지하고, 오류를 추적하고 디버그하는 데 도움
+
+< *Exception Propagation >*
+
+* 예외가 발생한 메서드에서 예외를 처리하지 않고, 해당 메서드를 호출한
+상위 메서드로 예외를 전달하는 메커니즘
+* 예외 전파를 통해 예외는 호출 스택을 따라 올라가며, 상위 메서드에서
+예외를 처리할 기회를 가진다.
+* 상위 메서드에서 예외를 처리하지 않으면, 예외는 다시 상위 메서드로
+전파되며, 이러한 과정이 상위 호출 스택까지 반복된다.
+
+—> < *Exception Handling > 과* < *Exception Propagation >의* 관련성
+
+* **Exception Handling**과 **Exception Propagation**는 서로 보완적인
+역할, 예외가 발생하면 가장 가까운 *`catch`* 블록에서 예외를 처리하고,
+처리하지 않으면 예외는 상위 호출 스택으로 전파
+* **Exception Handling**을 통해 예외가 발생한 위치에서 즉시 처리할 수
+있으며, 이로 인해 프로그램이 계속 실행 가능
+* **Exception Handling**은 모든 예외를 처리할 수 없는 경우도 있으며,
+이때 예외가 전파된다. 상위 메서드에서 예외를 처리하거나, 최종적으로는
+프로그램이 종료
+* *Exception Propagation은* 예외를 적절한 위치에서 처리하도록 하며,
+예외의 원인과 영향 범위를 파악하는 데 도움
+
+정리하면, **Exception Handling**은 예외를 지역적으로 처리하고,
+**Exception Propagation**는 예외를 전역적으로 처리하는 메커니즘
