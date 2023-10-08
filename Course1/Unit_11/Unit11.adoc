@@ -1,0 +1,182 @@
+== Unit11 Dynamic arrays and linked lists
+
+* Summary
++
+Limitations of arrays Dynamic memory management Definitions of lists
+Typical operations on lists: iterative implementation Typical operations
+on lists: recursive implementation
+
+배열의 제한사항
+
+* 배열의 차원은 배열이 생성될 때 결정되며 나중에 변경 불가능.
+* 선언된 배열의 크기에 비례하여 메모리를 차지
+* 요소를 정렬 상태로 유지하려면 새 값을 올바른 위치에 삽입하거나
+제거해야 한다. —> 번거로움
+
+제한사항을 해결하기 위해 ArrayLists, LinkedLists 및 Java Collections
+Framework의 다른 컬렉션 클래스와 같은 다른 데이터 구조를 사용
+
+—> 동적 크기 조정, 효율적인 삽입 및 삭제 작업, 메모리 관리의 측면에서 더
+많은 유연성을 제공
+
+ArrayList : 필요에 따라 자동으로 크기를 조정하므로 메모리 낭비를 줄임
+
+LinkedLists : 삽입 및 삭제 작업을 효율적으로 수행하지만 더 많은 메모리
+오버헤드가 발생할 수 있다.
+
+=== Dynamic memory management
+
+프로그램이 데이터를 저장하기 위해 기계 메모리와 상호 작용하는 방식을
+정의하는 *동적 메모리 관리*
+
+일반적으로 처리해야 할 컬렉션의 요소 수가 미리 알려져 있지 않은 경우를
+고려할 필요가 있다.
+
+—> 연결 리스트가 이를 고려하여 메모리를 동적으로 할당하고 해제할 수
+있도록 정의되었다.
+
+=== Linked lists
+
+특정 위치에 요소를 쉽게 삽입 및 삭제하고, 구조를 쉽게 수정 가능
+
+이러한 구조를 통해 요소의 컬렉션을 노드의 선형 시퀀스 형태로 구성하여
+저장할 수 있다.
+
+* 노드 : 데이터 구조에서 요소를 저장하는 기본 단위.
+* 선형 시퀀스 형태? 각 요소가 최대 하나의 후속 요소를 가질 수 있다는 것
+
+일반적으로 리스트의 노드 수를 미리 알지 못하며, 모든 노드에 대한 참조를
+포함하는 변수가 없다.
+
+*연결 리스트(linked list)에서 데이터를 관리하는 방식* : 리스트의 첫 번째
+노드에 대한 참조만 유지하고, 링크를 따라가는 방식으로 첫 번째 노드를
+통해 전체 리스트에 액세스.
+
+여기서 링크를 따라가는 방식을 통해 첫 번째 노드에서부터 시작하여
+링크(또는 포인터)를 따라가면, 다음 노드로 이동할 수 있다. *노드는
+데이터와 다음 노드를 가리키는 링크를 포함한다.*
+
+=== The class ListNode
+
+연결 리스트의 기본 클래스는 구조의 단일 요소 또는 노드와 관련된 정보를
+나타내는 객체의 클래스
+
+즉, 연결 리스트를 구성하는 각 요소 또는 노드를 표현하는 클래스.
+
+이 클래스는 연결 리스트의 노드를 정의하고 **해당 노드와 관련된 동작 및
+속성을 제공**한다.
+
+이러한 요소를 조합하여 전체 연결 리스트를 형성한다.
+
+* 명시적으로 접근 제어자를 지정하지 않을 경우, 디폴트로 기본 설정 되는데
+이는 해당 클래스와 멤버들이 같은 패키지 또는 디렉토리 내에서 정의된
+클래스에만 보임
+* Java에서 public 클래스는 클래스 이름과 동일한 파일에 정의되어야 한다.
+* 리스트를 조작하기 위해 변수들에 직접 접근할 필요가 있는 변수들은
+private으로 선언되지 않도록 한다.
+
+노드의 정보(info)와 다음 노드(next)를 포함하는 ListNode
+
+.스크린샷 2023-10-04 오전 10.38.23.png
+image::https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/0e0bb490-0cdf-481f-bc13-3b86653a8a3d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-10-04_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.38.23.png[스크린샷
+2023-10-04 오전 10.38.23.png]
+
+가비지 컬렉터는 삭제된 노드가 더 이상 참조되지 않는지 확인하고, 해당
+노드가 차지하고 있는 메모리를 힙에서 다른 객체에게 사용할 수 있도록
+해준다.
+
+리스트의 모든 요소에 작업을 수행하기 위해서는 반복문을 사용한다.
+
+=== Printing the elements of a list – recursive version
+
+[source,java]
+----
+public static void print(ListNode lis, PrintStream ps){
+        if(lis == null)
+            ps.println();
+        else {
+            ps.print(lis.info + " ");
+            print(lis.next, ps);
+        }
+    }
+----
+
+=== Searching an element in a list
+
+[source,java]
+----
+public static boolean search(ListNode lis, String s){
+        while(lis != null){
+            if(lis.info.equals(s)) return true;
+            lis = lis.next;
+        }
+        return false;
+    }
+----
+
+=== Inserting a new element as the last one of a list
+
+[source,java]
+----
+public static ListNode insertLast(ListNode lis, String s){
+        ListNode p = new ListNode(s);
+        p.info = s;
+
+        if(lis == null)
+            return p;
+        else {
+            ListNode last = lis;
+            while(last.next != null){
+                last = last.next;
+            }
+            last.next = p;
+            return lis;
+        }
+    }
+----
+
+=== Deleting the first occurrence of an element from a list
+
+.스크린샷 2023-10-05 오전 8.44.33.png
+image::https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/dff487c6-f5e2-4f75-9814-01ee62b1c2ca/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.44.33.png[스크린샷
+2023-10-05 오전 8.44.33.png]
+
+[source,java]
+----
+public static ListNode delete(ListNode lis, String s){
+        ListNode p = new ListNode(s);
+        p.next = lis;
+        lis = p;
+
+        boolean found = false;
+        while((p.next != null) && !found){
+            if(p.next.info.equals(s)) {
+                p.next = p.next.next;
+                found = true;
+            }else
+                p = p.next;
+            }
+        return lis.next;
+        }
+----
+
+=== Deleting all occurrences of an element from a list
+
+[source,java]
+----
+public static ListNode deleteAll(ListNode lis, String s){
+            ListNode p = new ListNode(s);
+            p.next = lis;
+            lis = p;
+
+            while(p.next != null){
+                if(p.next.info.equals(s)){
+                    p.next = p.next.next;
+                }
+                else p = p.next;
+            }
+            return lis.next;
+        }
+----
+
+=== Summary of the graphical representation of list manipulation statements
