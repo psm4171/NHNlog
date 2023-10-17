@@ -1,4 +1,5 @@
-pacakage Thread;
+package Thread;
+
 public class CounterThread extends Thread{
     String name;
     int count;
