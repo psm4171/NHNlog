@@ -1,4 +1,5 @@
-pacakage Thread
+package Thread;
+
 public class TestCounter {
     public static void main(String[] args) throws InterruptedException {
         Counter counter1 = new Counter("Counter1");
