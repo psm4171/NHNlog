@@ -1,3 +1,4 @@
+package Thread;
 
 public class Counter extends Thread{
     String name;
