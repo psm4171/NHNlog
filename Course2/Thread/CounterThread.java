@@ -1,3 +1,4 @@
+pacakage Thread;
 public class CounterThread extends Thread{
     String name;
     int count;
