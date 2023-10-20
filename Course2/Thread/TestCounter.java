@@ -18,10 +18,8 @@ public class TestCounter {
 
         // 1-5
         counterThread1.start();
-        counter1.run();
-
-
+        counter1.run(); // run은 싱글 스레드라서 싱글 스레드가 완전히 종료된 후 멀티 스레드가 실행되므로
+        // run() -> start() 순서로 실행 시키면 멀티 스레드
 
     }
-
 }
