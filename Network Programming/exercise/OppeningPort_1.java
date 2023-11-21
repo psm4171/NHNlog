@@ -1,12 +1,8 @@
 package exercise;
 
-import java.io.IOException;
-import java.net.Socket;
-import java.net.UnknownHostException;
-
 import java.net.Socket;
 
-public class OppeningPort {
+public class OppeningPort_1 {
     public static void main(String[] args) {
         int startPort = 0;
         int endPort = 65535;
