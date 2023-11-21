@@ -8,7 +8,7 @@ import java.net.Socket;
 
 public class MultiClient_11 {
 
-    public static void handleClient(Socket socket) throws IOException {
+    public static void participateClient(Socket socket) throws IOException {
         try(  BufferedInputStream input = new BufferedInputStream(socket.getInputStream());
               BufferedOutputStream output = new BufferedOutputStream(socket.getOutputStream())){
 
@@ -20,9 +20,12 @@ public class MultiClient_11 {
             while((length = input.read(buffer)) > 0){
                 output.write(buffer, 0, length);
                 output.flush();
+
+                String clientRequest = new String(buffer, 0, length);
+                System.out.println("클라이언트로부터 받은 데이터 : " + clientRequest);
             }
 
-            System.out.println("클라이언트와의 연결이 종료됨.");
+
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -48,14 +51,15 @@ public class MultiClient_11 {
             while(true){
 
                 Socket socket = serverSocket.accept();
-                Thread clientHanler = new Thread(() -> {
+
+                Thread participateClient = new Thread(() -> {
                     try {
-                        handleClient(socket);
+                        participateClient(socket);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 });
-                clientHanler.start();
+                participateClient.start();
             }
 
         } catch (IOException e) {
