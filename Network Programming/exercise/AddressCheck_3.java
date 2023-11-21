@@ -3,9 +3,8 @@ package exercise;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
-public class AddressCheck {
+public class AddressCheck_3 {
     public static void main(String[] args) {
         String host = "localhost";
         int port = 1234;
