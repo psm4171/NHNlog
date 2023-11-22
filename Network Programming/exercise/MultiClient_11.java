@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MultiClient_11 {
+public class MultiClient_Server_11 {
 
     public static void participateClient(Socket socket) throws IOException {
         try(  BufferedInputStream input = new BufferedInputStream(socket.getInputStream());
@@ -22,7 +22,8 @@ public class MultiClient_11 {
                 output.flush();
 
                 String clientRequest = new String(buffer, 0, length);
-                System.out.println("클라이언트로부터 받은 데이터 : " + clientRequest);
+                System.out.println("클라이언트로부터 받은 메세지 : " + clientRequest);
+
             }
 
 
