@@ -4,13 +4,6 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class PortCheck_2 {
-
-    package exercise;
-
-import java.io.IOException;
-import java.net.Socket;
-
-public class PortCheck_2 {
     public static void main(String[] args) {
         String host = "localhost"; // 확인할 호스트
         int startPort = 1; // 시작 포트 번호
