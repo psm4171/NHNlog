@@ -1,0 +1,443 @@
+HTML
+
+웹 페이지가 어떻게 구조화 되어 있는지 브라우저가 알 수 있게 하는 마크업 언어
+
+속성
+
+![스크린샷 2023-11-23 오전 10.49.09.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/e02f7053-04bf-4cb3-98fe-a00a69b45a40/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-11-23_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.49.09.png)
+
+### 요소에 실제로는 나타내고 싶지 않지만 추가적인 내용을 담고 싶을 때 사용
+
+- 요소 이름 다음에 바로 오는 속성인 요소 이름과 속성 사이에 공백을 둠
+- 하나 이상의 속성이 있는 경우 속성 사이에 공백
+- 속성 이름 다음에는 등호(=)가 붙음
+- 속성 값은 따옴표로 감싸야 함
+
+### **공백**
+
+- <br/>
+
+### **주석**
+
+- <!— 주석입니다. —>
+
+### **Boolean 속성**
+
+```html
+<input type = "text" disabled>
+```
+
+양식 요소에 입력하면 사용자가 데이터를 입력할 수 없도록 비활성화
+
+### **HTML 문서의 구조**
+
+![스크린샷 2023-11-23 오전 10.52.40.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/f8b72d3d-6605-4a70-81c2-d4817dc062d9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-11-23_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.52.40.png)
+
+### DOCTYPE을 생략하면 발생하는 문제
+
+- 브라우저는 쿼크 모드 ( Quirks Mode )로 페이지를 렌더링 함
+- 쿼크 모드에서는 이전 세대의 브라우저에 맞는 비표준적 방법의 CSS를 적용
+- 쿼크 모드는 브라우저마다 렌더링 방식이 다름
+- **결과적으로 크로스 브라우징 문제 발생**
+
+### **문서의 시작과 끝 - html 태그**
+
+### <html lang="ko"></html>
+
+- HTML 전체를 감싸는 태그
+- lang 속성
+- 웹 접근성을 준수하기 위함
+- **<span style="color:#e11d21">검색(SEO)과 음성장치에서 사용</span>**
+- User-Agent가 언어를 바로 해석할 수 있도록 함
+- 구글 번역기는 이 언어를 사용하여 번역을 도와 줌
+- language code
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>My test page</title>
+    </head>
+	<body>
+ 	 <h1><a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank" >HTML Language Code Reference</a></h1>
+            <p lang="ko">웹 접근성을 준수하기 위함</p>
+            <p lang="ko">검색SEO)과 음성장치에서 사용(시각장애인)</p>
+            <p lang="ko">User-Agent가 언어를 바로 해석할 수 있도록 함</p>
+            <p lang="ko">구글 번역기는 이 언어를 사용하여 번역을 도와줌</p>
+            <p lang="en">english</p>
+    </body>
+</html>
+```
+
+### **<head>**
+
+- <title> : 제목을 표시
+- • <link rel="…" href="…" /> : 파일 링크와 스크립트
+- • <script> 태그로 삽입하는 자바스크립트
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Datamotion Movie Database</title>
+        <style>
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                border: 2px solid rgba(0,0,200,0.6);
+                display: inline-block;
+                cursor: pointer;
+            }
+        </style>
+
+        <link rel="stylesheet" href="./17.sample.css" />
+
+        <script>
+            function updateName() {
+                prompt('Enter a new name');
+            }
+            window.addEventListener('DOMContentLoaded',function(){
+                const para = document.querySelector("p");
+                console.log(para);
+                para.addEventListener('click', updateName);
+            });
+        </script>
+    </head>
+    <body>
+        <p>head 요소의 내용은 브라우저에 표시되지 않음</p>
+        <p>title tag는 제목을 표시합니다.</p>
+    </body>
+</html>
+```
+
+**<head> 요소의 내용은 브라우저에 표시되지 않음**
+
+- 페이지에 대한 metadata를 포함
+- 제목을 표시하는 <title>
+
+### CSS
+
+- <style> 태그로 삽입
+
+```jsx
+<style>
+    p {
+        font-family: helvetica, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border: 2px solid rgba(0,0,200,0.6);
+        display: inline-block;
+        cursor:pointer;
+    }
+</style>
+```
+
+- <link> 태그로 파일 참조
+- JavaScript는 <script> 태그로 삽입
+
+**페이지에 대한 메타 데이터를 포함**
+
+- 인코딩 설정
+
+```html
+<meta charset="UTF-8">
+```
+
+- IE 호환성
+
+```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+```
+
+- 페이지 설명
+
+```html
+<meta name="keywords" content="movie">
+<meta name="description" content="Simple Movie Database">
+<meta name="author" content="Randy">
+```
+
+### **Open Graph Protocol 페이지에 대한 요약 정보**
+우
+
+- 웹사이트가 OGP를 지원하면, 웹사이트를 들어가기도 전에 뭐하는 사이트인지 미리 알 수 있다.
+- payco.com의 url을 카카오톡에 붙여 넣으면 다음과 같이 확인 가능하다.
+
+    ![스크린샷 2023-11-23 오전 11.23.34.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/35c2be63-b9f4-45bf-ab9f-24bbb943994c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-11-23_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11.23.34.png)
+
+
+### **Http method 종류**
+
+- **GET**
+- `GET` 메서드는 특정 리소스의 표시를 요청합니다.`GET` 을 사용하는 요청은 오직 데이터를 받기만 합니다.
+- HEAD
+- `HEAD`메서드는`GET`메서드의 요청과 동일한 응답을 요구하지만, 응답 본문을 포함하지 않습니다.
+- **POST**
+- `POST`메서드는 특정 리소스에 엔티티를 제출할 때 쓰입니다. 이는 종종 서버의 상태의 변화나 부작용을 일으킵니다.
+- **PUT**
+- `PUT`메서드는 목적 리소스 모든 현재 표시를 요청 payload로 바꿉니다.
+- **DELETE**
+- `DELETE`메서드는 특정 리소스를 삭제합니다.
+- OPTIONS
+- `OPTIONS`메서드는 목적 리소스의 통신을 설정하는 데 쓰입니다.
+- **PATCH**
+- `PATCH`메서드는 리소스의 부분만을 수정하는 데 쓰입니다.
+- CONNECT
+- `CONNECT`메서드는 목적 리소스로 식별되는 서버로의 터널을 맺습니다.
+- TRACE
+- `TRACE` 메서드는 목적 리소스의 경로를 따라 메시지 loop-back 테스트를 합니다.
+
+GET test
+
+```html
+<!DOCTYPE html><html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form method="get" action="https://httpbin.org/get">
+            <p><input type="number" name="no" placeholder="no"></p>
+            <p><input type="text" name="id" placeholder="id" ></p>
+            <p><input type="number" name="age" placeholder="age" ></p>
+            <p><button type="submit">submit</button></p>
+        </form>
+    </body>
+</html>
+```
+
+GET 결과
+
+GET 요청에서는 데이터가 URL 매개변수의 일부로 전송된다. (**`https://httpbin.org/get?no=1&id=marco&age=30`**).
+
+```html
+{
+  "args": {
+    "age": "30",
+    "id": "marco",
+    "no": "1"
+  },
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Cache-Control": "max-age=0",
+    "Host": "httpbin.org",
+    "Sec-Ch-Ua": "\"Google Chrome\";v=\"107\", \"Chromium\";v=\"107\", \"Not=A?Brand\";v=\"24\"",
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": "\"macOS\"",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+    "X-Amzn-Trace-Id": "Root=1-63855227-074961e103899ece08c036d4"
+  },
+  "origin": "58.239.124.18",
+  "url": "https://httpbin.org/get?no=1&id=marco&age=30"
+}
+```
+
+POST test
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form method="post" action="https://httpbin.org/post">
+            <p><input type="number" name="no" placeholder="no"></p>
+            <p><input type="text" name="id" placeholder="id" ></p>
+            <p><input type="number" name="age" placeholder="age" ></p>
+            <p><button type="submit">submit</button></p>
+        </form>
+    </body>
+</html>
+```
+
+POST 요청에서는 데이터가 요청 본문에서 폼 데이터로 전송됩니다(**`"form": {"age": "30", "id": "marco", "no": "1"}`**).
+
+POST 결과
+
+```html
+{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {
+    "age": "30",
+    "id": "marco",
+    "no": "1"
+  },
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Cache-Control": "max-age=0",
+    "Content-Length": "20",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Host": "httpbin.org",
+    "Origin": "null",
+    "Sec-Ch-Ua": "\"Google Chrome\";v=\"107\", \"Chromium\";v=\"107\", \"Not=A?Brand\";v=\"24\"",
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": "\"macOS\"",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "cross-site",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+    "X-Amzn-Trace-Id": "Root=1-638553de-501147f16bd3dc8c0e0b452a"
+  },
+  "json": null,
+  "origin": "58.239.124.18",
+  "url": "https://httpbin.org/post"
+}
+```
+
+GET과 POSR 결과의 차이점
+
+### **차이점:**
+
+1. **요청에 포함된 데이터:**
+- GET 요청에서는 데이터가 URL 매개변수의 일부로 전송됩니다(**`https://httpbin.org/get?no=1&id=marco&age=30`**).
+- POST 요청에서는 데이터가 요청 본문에서 폼 데이터로 전송됩니다(**`"form": {"age": "30", "id": "marco", "no": "1"}`**).
+2. **요청 메소드:**
+- GET은 지정된 리소스에서 데이터를 가져옵니다.
+- POST는 지정된 리소스로 처리를 위해 데이터를 제출합니다.
+3. **Content-Type 헤더:**
+- POST 요청에서는 **`"Content-Type": "application/x-www-form-urlencoded"`** 헤더가 있어 데이터가 URL로 인코딩된 매개변수임을 나타냅니다.
+4. **Content-Length 헤더:**
+- POST 요청에는 **`"Content-Length": "20"`** 헤더가 포함되어 요청 본문의 길이를 나타냅니다.
+5. **Sec-Fetch-Site 헤더:**
+- GET 요청에서는 **`"Sec-Fetch-Site": "none"`**이 같은 출처에 대한 요청임을 나타냅니다.
+- POST 요청에서는 **`"Sec-Fetch-Site": "cross-site"`**이 다른 출처에 대한 요청임을 나타냅니다.
+
+
+- **GET:** 주로 데이터를 요청하고 가져올 때 사용. URL의 일부로 데이터를 전달하며, 브라우저 히스토리에 남습니다.
+
+즉, GET 요청은 HTTP(하이퍼텍스트 전송 프로토콜)에서 사용되는 메서드 중 하나로, 클라이언트가 서버로부터 어떤 리소스의 표시를 요청하는 데 사용된다.
+
+이 메서드는 주로 데이터를 서버로 보내지 않고 서버로부터 데이터를 요청.
+
+**GET 요청은 주로 웹 브라우저에서 링크를 클릭하거나 URL을 입력하여 웹 페이지를 요청**할 때 사용됩니다.
+
+- **POST:** 주로 데이터를 제출하고 서버의 상태를 변경할 때 사용. 데이터는 요청의 본문에 포함되며, 브라우저 히스토리에 남지 않습니다.
+
+즉, POST 요청은 HTTP(하이퍼텍스트 전송 프로토콜)에서 사용되는 메서드 중 하나로, 클라이언트가 서버로 데이터를 제출하거나 서버의 상태를 변경하도록 요청하는 데 사용된다.
+
+POST 요청은 데이터를 요청 본문에 포함시켜 전송하며, 주로 폼 데이터를 서버로 제출하거나 리소스를 생성하거나 업데이트하는 데 사용됩니다.
+
+### CSS
+
+Box Model
+
+• 웹 문서의 내용을 박스 형태로 정의하는 방법이며, CSS 레이아웃의 기본이 되는 개념
+
+• 브라우저가 Element를 렌더링 할 때 참고하는 값
+
+![스크린샷 2023-11-23 오후 6.37.35.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/112ee804-2cfd-4743-82c4-a45e30766621/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-11-23_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.37.35.png)
+
+### **Flexible 박스**
+
+- 유연하게 조정한다는 뜻의 새로운 display 속성
+- HTML5에서 추가 - 모든 모던 브라우저에서 지원
+- flexbox는 부모 요소인 container와 자식요소인 flex item으로 구성
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/a5a96463-a6a7-4604-b341-0ffd584c4de6/Untitled.png)
+
+Overflow
+
+```css
+<style>
+    .container{
+        padding:10px;
+        outline: solid black;
+        width: 100px;
+        height: 100px;
+    }
+    .box{
+        width: 80px;
+        height: 200px;
+    }
+
+    .container_visible{
+        overflow:visible;
+    }
+    .container_hidden{
+        overflow: hidden;
+    }
+
+    .container_scroll{
+       overflow: scroll;
+    }
+    .container_ellipsis{
+        width: 500px ;
+        height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+```
+
+**Overflow :** hidden**;**
+
+- hidden : 부모 element를 넘어 가는 값을 잘라낸다.
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/b2cbc339-2c74-473c-bfcb-558ba6706870/Untitled.png)
+
+**Overflow : scroll;**
+
+- scroll : 가로 세로 스크롤 바를 항상 보여준다.
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/cee1f76b-3ef0-47e7-a034-7a5e8ac214b5/Untitled.png)
+
+**text-overflow : ellipsis;**
+
+- 텍스트가 부모 요소를 벗어났을 때 말 줄임 표시를 위해 사용
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/395462da-945e-46ab-a217-609e732466d0/Untitled.png)
+
+**z-index**
+
+- z-index를 이용하여 요소의 순서 설정
+- 즉 어떤 Element가 가장 위로 올라갈 것인지 결정
+
+```css
+<style>
+    .box{
+        width: 200px;
+        height: 50px;
+        position: absolute;
+        font-weight: bold;
+        font-size: 12pt;
+    }
+
+    .box2{
+        z-index:2;
+        top:150px;
+        left:100px;
+        background-color: #ccc;
+    }
+    .box3{
+        z-index:3;
+        top:180px;
+        left:140px;
+        background-color: skyblue;
+    }
+    .box4{
+        z-index:4;
+        top:170px;
+        left:280px;
+        background-color: red;
+    }
+
+</style>
+```
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/52f7db7f-3657-4498-85c0-0d720277f9b6/Untitled.png)
