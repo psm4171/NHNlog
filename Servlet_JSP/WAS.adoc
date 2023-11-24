@@ -1,0 +1,51 @@
+# Web Application Server (WAS)
+
+- 주로 정적 웹 콘텐츠를 처리하는 웹서버와 구분하기 위한 용도
+- Servlet Container, EJB Container 등의 역할을 수행하며 동적 웹 콘텐츠를 생성하기 위한 웹 어플리케이션과 서버 환경을 만들어 동작시키는 기능을 제공
+
+### Servlet
+
+- Java를 사용하여 동적 웹 콘텐츠를 생성하는 서버 측 프로그램
+- CGI 단점 해결 → Servlet Container 도입
+
+### Servlet Container
+
+- Servlet의 생명주기를 관리하고, URL과 특정 서블릿을 맵핑 하며 URL 요청 처리
+- Java EE 아키텍처에 속함
+
+### Java EE
+
+- Java 언어로 엔터프라이즈 애플리케이션을 개발하고 운영할 수 있도록 지원해 주는 플랫폼
+- 현재는 Eclipse 재단으로 운영이 넘어가서 Jakarta EE 로 변경됨
+
+### WAS
+
+- Web Application Server
+- = Servlet Container
+
+### tomcat
+
+- apache 재단에서 만든 WAS 중의 하나
+- Servlet Container의 reference 구현
+- 사실상, Servlet Container = WAS = tomcat
+
+## 웹서버와 WAS 연동 - Reverse Proxy
+
+### Proxy
+
+- 자원을 요청하는 클라이언트와 자원을 제공하는 서버 사이에서 중재자 역할을 하는 서버 프로그램
+
+### Forward Proxy
+
+- 사용자의 요청을 실제 서버가 직접 받는 것이 아니라 중간에서 포워드 프록시 서버가 대신 요청받아 실제 서버에 연결하여 그 결과를 클라이언트에 전달 — ex) 무신사에 급격한 사용자의 증가로 흔히 말하는 서버 오류는 서버가 아니라 Forward  Proxy의 오류를 말한다.
+- Caching을 통한 성능 향상
+- 웹 사용 환경 제한을 통한 보안 강화
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/47b8f7d6-a0e9-495e-a9de-cb8ea983af44/Untitled.png)
+
+### Reverse Proxy
+
+- 보안상의 이유로 DMZ 존에 웹서버를 두고 Reverse Proxy로 설정하고 WAS는 내부망에 위치시킴
+- 상황에 맞게 웹서버나 WAS를 유연하게 늘릴 수 있음
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/062c0360-f1b2-48e3-a0c2-0b1f92c618cf/Untitled.png)
