@@ -7,8 +7,18 @@
     <servlet>
         <servlet-name>helloServlet</servlet-name>
         <servlet-class>com.nhnacademy.hello.HelloServlet</servlet-class>
+
         <servlet-name>nowServlet</servlet-name>
         <servlet-class>com.nhnacademy.hello.NowServlet</servlet-class>
+
+        <servlet-name>beautifyServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.BeautifyServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+
+        <servlet-name>multiServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.MultiServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+
     </servlet>
 
     <servlet-mapping>
@@ -16,17 +26,10 @@
         <url-pattern>/hello</url-pattern>
         <servlet-name>nowServlet</servlet-name>
         <url-pattern>/now</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>beautifyServlet</servlet-name>
-        <servlet-class>com.nhnacademy.hello.BeautifyServlet</servlet-class>
-        <load-on-startup>3</load-on-startup>
-    </servlet>
-
-    <servlet-mapping>
         <servlet-name>beautifyServlet</servlet-name>
         <url-pattern>/beautify</url-pattern>
+        <servlet-name>multiServlet</servlet-name>
+        <url-pattern>/multi</url-pattern>
     </servlet-mapping>
 
 </web-app>
