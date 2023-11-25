@@ -1,46 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
-         version="5.0">
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>multiple choices</title>
+</head>
+<body>
+    <form method="post" action="/multi">
+        <ul>
+            <li>
+                <input type="checkbox" name="class" id="class_java" value="java"/> <label for="class_java">Java</label></br>
+            </li>
+            <li>
+                <input type="checkbox" name="class" id="class_html" value="html"/> <label for="class_html">HTML</label></br>
+            </li>
+            <li>
+                <input type="checkbox" name="class" id="class_maven" value="Maven"/> <label for="class_maven">Maven</label></br>
+            </li>
+            <li>
+                <input type="checkbox" name="class" id="class_servlet" value="Servlet"/><label for="class_servlet">Servlet</label></br>
+            </li>
+        </ul>
 
-    <servlet>
-        <servlet-name>helloServlet</servlet-name>
-        <servlet-class>com.nhnacademy.hello.HelloServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>helloServlet</servlet-name>
-        <url-pattern>/hello</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>nowServlet</servlet-name>
-        <servlet-class>com.nhnacademy.hello.NowServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>nowServlet</servlet-name>
-        <url-pattern>/now</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>beautifyServlet</servlet-name>
-        <servlet-class>com.nhnacademy.hello.BeautifyServlet</servlet-class>
-        <load-on-startup>3</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>beautifyServlet</servlet-name>
-        <url-pattern>/beautify</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>multiServlet</servlet-name>
-        <servlet-class>com.nhnacademy.hello.MultiServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>multiServlet</servlet-name>
-        <url-pattern>/multi</url-pattern>
-    </servlet-mapping>
-
-</web-app>
+        <input type="submit" value="전송" />
+    </form>
+</body>
+</html>
