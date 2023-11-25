@@ -7,6 +7,16 @@
     <servlet>
         <servlet-name>helloServlet</servlet-name>
         <servlet-class>com.nhnacademy.hello.HelloServlet</servlet-class>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>Mr.</param-value>
+        </init-param>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>marco</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+
     </servlet>
 
     <servlet-mapping>
@@ -36,11 +46,13 @@
     <servlet>
         <servlet-name>multiServlet</servlet-name>
         <servlet-class>com.nhnacademy.hello.MultiServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>multiServlet</servlet-name>
         <url-pattern>/multi</url-pattern>
     </servlet-mapping>
+
+
 
 </web-app>
