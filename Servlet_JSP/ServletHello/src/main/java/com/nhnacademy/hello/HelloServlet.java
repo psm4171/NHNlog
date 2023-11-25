@@ -4,6 +4,7 @@ import com.sun.net.httpserver.HttpServer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 import java.util.logging.Logger;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -37,6 +38,17 @@ public class HelloServlet  extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+
+        String title = getServletConfig().getInitParameter("title");
+        String name = getServletConfig().getInitParameter("name");
+
+        if(Objects.isNull(title)){
+            title = "Mr.";
+        }
+        if(Objects.isNull(name)){
+            name = "marco";
+        }
+
         resp.setCharacterEncoding("utf-8");
         try(PrintWriter writer = resp.getWriter()) {
             writer.println("<!DOCTYPE html>");
@@ -47,6 +59,7 @@ public class HelloServlet  extends HttpServlet {
             writer.println("<body>");
             writer.println("<h1>hello servlet!</h1>");
             writer.println("<h1>안녕 서블릿!</h1>");
+            writer.printf("<h2>hello, %s %s </h2>\n", title, name);
             writer.println("</body>");
             writer.println("</html>");
         } catch (IOException e) {
