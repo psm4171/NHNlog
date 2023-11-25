@@ -8,5 +8,9 @@
 <h1><%= "Hello Servlet!" %></h1>
 <br/>
 <a href="hello">Hello Servlet</a>
+<br/>
+<a href="beautify.html">Beautify NHN Info</a>
+<br/>
+<a href="multi.html">Multi Menu</a>
 </body>
 </html>
