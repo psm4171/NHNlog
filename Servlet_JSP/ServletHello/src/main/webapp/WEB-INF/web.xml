@@ -80,6 +80,26 @@
         <param-name>url</param-name>
         <param-value>https://nhnacademy.com</param-value>
     </context-param>
+    
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.session.LoginServlet</servlet-class>
+        <init-param>
+            <param-name>id</param-name>
+            <param-value>admin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>pwd</param-name>
+            <param-value>1234</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+
 
 
 </web-app>
