@@ -53,6 +53,18 @@
         <url-pattern>/multi</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>counterServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.CounterServlet</servlet-class>
+        <init-param>
+            <param-name>counter</param-name>
+            <param-value>100</param-value>
+        </init-param>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>counterServlet</servlet-name>
+        <url-pattern>/counter</url-pattern>
+    </servlet-mapping>
 
 </web-app>
