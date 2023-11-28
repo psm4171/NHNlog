@@ -19,17 +19,22 @@ public class MapStudentRepository implements StudentRepository{
 
     @Override
     public void update(Student student) {
+        if(existById(student.getId())) {
+            studentList.put(student.getId(), student);
+        }else {
+            throw new IllegalArgumentException(student.getId() + "가 존재하지 않습니다.");
+        }
 
     }
 
     @Override
     public void deleteById(String id) {
-
+        studentList.remove(id);
     }
 
     @Override
     public Student getStudentById(String id) {
-        return null;
+        return studentList.get(id);
     }
 
     @Override
@@ -39,6 +44,6 @@ public class MapStudentRepository implements StudentRepository{
 
     @Override
     public boolean existById(String id) {
-        return false;
+        return studentList.containsKey(id);
     }
 }
