@@ -23,9 +23,11 @@
         }
     </style>
 </head>
-<body>
 <h1>학생 리스트</h1>
-<p><a href="/register">학생(등록)</a></p>
+<p><a href="/register.jsp">학생(등록)</a></p>
+</p>
+<p><a href="/view.jsp">학생 조회</a></p>
+</body>
 <table>
     <thead>
     <tr>
@@ -37,9 +39,10 @@
     </tr>
     </thead>
     <tbody>
-<%--    <%--%>
-<%--        List<Student> studentList = ((StudentRepository) application.getAttribute("studentRepository")).getStudents();--%>
-<%--    %>--%>
+    <%
+        List<Student> studentList = ((StudentRepository) application.getAttribute("studentRepository")).getStudents();
+    %>
+
 
     <c:forEach var="student" items="${studentList}">
         <tr>
@@ -47,8 +50,7 @@
             <td style="text-align: center">${student.name}</td>
             <td style="text-align: center">${student.gender}</td>
             <td style="text-align: center">${student.age}</td>
-            <td style="text-align: center"><a href="/edit?id=${student.id}">수정</a> | <a href="/delete?id=${student.id}">삭제</a></td>
-        </tr>
+            <td style="text-align: center"><a href="/view?id=${student.id}">조회</a></td>
     </c:forEach>
     </tbody>
 </table>
