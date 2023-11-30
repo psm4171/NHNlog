@@ -24,9 +24,9 @@
     </style>
 </head>
 <h1>학생 리스트</h1>
-<p><a href="/register.jsp">학생(등록)</a></p>
+<p><a href="/register?id=${student.id}">학생(등록)</a></p>
 </p>
-<p><a href="/view.jsp">학생 조회</a></p>
+<p><a href="/view?id=${student.id}">학생 조회</a></p>
 </body>
 <table>
     <thead>
@@ -39,10 +39,6 @@
     </tr>
     </thead>
     <tbody>
-    <%
-        List<Student> studentList = ((StudentRepository) application.getAttribute("studentRepository")).getStudents();
-    %>
-
 
     <c:forEach var="student" items="${studentList}">
         <tr>

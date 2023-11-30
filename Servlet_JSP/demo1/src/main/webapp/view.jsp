@@ -27,13 +27,9 @@
 </head>
 
 <body>
-
-
-<form method="post" action="${action}">
 <table>
     <tbody>
-    <div class="student-info-container">
-
+        <div class="student-info-container">
         <h1>학생-조회</h1>
         <table>
             <tr>
@@ -63,21 +59,17 @@
 </table>
     <ul>
        <td><a href="/list.jsp">리스트</a></td>
-
-        <li>
-            <c:url var="update_link" value="/register">
-                <c:param name="id" value="${student.id}" />
-            </c:url>
-            <a href="/update.jsp">수정</a>
+    <li>
+        <a href="/update?id=${student.id}">수정</a>
         </li>
 
         <li>
-            <form method="post" action="/delete">
-                <input type="hidden" name="id" value="${student.id}">
-                <input type="submit" value="삭제">
-            </form>
-        </li>
 
+    <form method="post" action="<c:url value='/delete'/>">
+        <input type="hidden" name="id" value="${student.id}">
+        <button type="submit">삭제</button>
+    </form>
+        </li>
     </ul>
 </form>
 </body>
