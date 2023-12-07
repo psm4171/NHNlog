@@ -1,0 +1,27 @@
+package com.nhnacademy.shoppingmall.product.repository;
+
+import com.nhnacademy.shoppingmall.product.domain.Product;
+import com.nhnacademy.shoppingmall.user.domain.User;
+import com.nhnacademy.shoppingmall.user.exception.UserAlreadyExistsException;
+import java.util.List;
+import java.util.Optional;
+
+public interface ProductRepository {
+
+    Optional<Product> findByProductId(int productId);
+    int saveProduct(Product product);
+    void deleteByProductId(int productId);
+    int updateProduct(Product product);
+    List<Product> getAllProducts();
+
+    int countByProductId(int productId);
+
+}
+
+
+
+
+
+
+
+
