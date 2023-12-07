@@ -1,0 +1,79 @@
+package com.nhnacademy.shoppingmall.controller.auth;
+
+import com.nhnacademy.shoppingmall.common.mvc.annotation.RequestMapping;
+import com.nhnacademy.shoppingmall.common.mvc.controller.BaseController;
+import com.nhnacademy.shoppingmall.product.domain.Product;
+import com.nhnacademy.shoppingmall.product.repository.impl.ProductRepositoryImpl;
+import com.nhnacademy.shoppingmall.product.service.ProductService;
+import com.nhnacademy.shoppingmall.product.service.impl.ProductServiceImpl;
+import com.nhnacademy.shoppingmall.user.domain.User;
+import com.nhnacademy.shoppingmall.user.repository.impl.UserRepositoryImpl;
+import com.nhnacademy.shoppingmall.user.service.UserService;
+import com.nhnacademy.shoppingmall.user.service.impl.UserServiceImpl;
+import java.io.IOException;
+import java.math.BigDecimal;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
+
+//import com.nhnacademy.shoppingmall.common.mvc.annotation.RequestMapping;
+//import com.nhnacademy.shoppingmall.common.mvc.controller.BaseController;
+//import com.nhnacademy.shoppingmall.common.mvc.transaction.DbConnectionThreadLocal;
+//import com.nhnacademy.shoppingmall.product.domain.Product;
+//import com.nhnacademy.shoppingmall.product.repository.impl.ProductRepositoryImpl;
+//import com.nhnacademy.shoppingmall.product.service.ProductService;
+//import com.nhnacademy.shoppingmall.product.service.impl.ProductServiceImpl;
+//import com.nhnacademy.shoppingmall.user.domain.User;
+//import com.nhnacademy.shoppingmall.user.repository.impl.UserRepositoryImpl;
+//import com.nhnacademy.shoppingmall.user.service.UserService;
+//import com.nhnacademy.shoppingmall.user.service.impl.UserServiceImpl;
+//import java.io.IOException;
+//import java.math.BigDecimal;
+//import java.sql.Connection;
+//import java.sql.PreparedStatement;
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpSession;
+//import lombok.extern.slf4j.Slf4j;
+//import org.w3c.dom.Text;
+@Slf4j
+@RequestMapping(method = RequestMapping.Method.POST, value = "/productAction.do")
+public class ProductPostController implements BaseController {
+
+    private ProductService productService = new ProductServiceImpl(new ProductRepositoryImpl());
+    private UserService userService = new UserServiceImpl(new UserRepositoryImpl());
+
+    @Override
+    public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        HttpSession session = req.getSession(false);
+
+        if (session != null && userService.isAuthenticated(session)) {
+            String userId = (String) session.getAttribute("userId");
+
+            if (userService.getUser(userId).getUserAuth().equals(User.Auth.ROLE_ADMIN)) {
+                int productId = Integer.parseInt(req.getParameter("ProductID"));
+                int categoryId = Integer.parseInt(req.getParameter("CategoryID"));
+                String modelNumber = req.getParameter("ModelNumber");
+                String modelName = req.getParameter("ModelName");
+                String productImage = req.getParameter("ProductImage");
+                BigDecimal unitCost = new BigDecimal(req.getParameter("UnitCost"));
+                String dscription = req.getParameter("Description");
+
+                try {
+                    Product product = new Product(productId, categoryId, modelNumber, modelName, productImage, unitCost, dscription);
+                    log.info("new Product:{}", product.getProductId());
+                    productService.saveProduct(product);
+                    log.info("상품을 저장했습니다. ProductID: {}", productId);
+//            if(session != null && userService.getUser(userId).getUserAuth().equals(User.Auth.ROLE_ADMIN)){
+//
+//            }
+                } catch (Exception e) {
+                    log.error("상품 저장에 실패했습니다.", e);
+                }
+            }
+        }
+        return null;
+    }
+}
