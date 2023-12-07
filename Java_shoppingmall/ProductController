@@ -53,3 +53,27 @@ public class ProductController implements BaseController {
         }
     }
 }
+
+@Slf4j
+@RequestMapping(method = RequestMapping.Method.GET, value = "/productEnroll.do")
+
+public class ProductController implements BaseController {
+    @Override
+    public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        log.info("product enroll: ");
+        ProductService productService = (ProductService) req.getServletContext().getAttribute("productService");
+        try {
+            log.error("Product start");
+            DbConnectionThreadLocal.initialize();
+            List<Product> productList = productService.getAllProductsList();
+            req.setAttribute("productList", productList);
+            DbConnectionThreadLocal.reset();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        log.error("Product end");
+
+        return "/admin/layout/productEnroll";
+    }
+}
