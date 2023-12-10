@@ -5,4 +5,3 @@
 - Database
 - Network Programming
 - Servlet And JSP
-- Shoppingmall 
