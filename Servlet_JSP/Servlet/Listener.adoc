@@ -1,0 +1,74 @@
+# Listener
+
+**리스너(Listener)**는 Servlet Container에서 발생하는 특정 이벤트에 대해 감지하여 그에 따른 동작을 수행하는 객체를 말합니다.
+
+Servlet Container는 서블릿의 생명주기 이벤트, 세션 이벤트, 컨텍스트 이벤트 등 다양한 이벤트를 발생시키며, 리스너는 이러한 이벤트에 반응하여 특정 작업을 수행할 수 있습니다.
+
+![스크린샷 2023-12-17 오후 11.44.43.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/30914778-8bfa-404a-8db1-10f28062c17e/539a67fb-c22a-45d0-a501-f848ec604370/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-12-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.44.43.png)
+
+**ServletContextListener (컨텍스트 리스너):**
+
+- **`ServletContext`**의 생명주기 이벤트를 처리합니다.
+- 웹 애플리케이션이 시작될 때와 종료될 때의 이벤트를 처리할 수 있습니다.
+- **`contextInitialized`** 메서드는 웹 애플리케이션이 초기화될 때 호출되며, **`contextDestroyed`** 메서드는 웹 애플리케이션이 종료될 때 호출됩니다.
+
+```java
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+public class MyServletContextListener implements ServletContextListener {
+    @Override
+    public void contextInitialized(ServletContextEvent sce) {
+        // 웹 애플리케이션이 초기화될 때 수행할 작업
+    }
+
+    @Override
+    public void contextDestroyed(ServletContextEvent sce) {
+        // 웹 애플리케이션이 종료될 때 수행할 작업
+    }
+```
+
+**HttpSessionListener (세션 리스너):**
+
+- 세션의 생명주기 이벤트를 처리합니다.
+- 세션이 생성되거나 소멸될 때의 이벤트를 처리할 수 있습니다.
+- **`sessionCreated`** 메서드는 세션이 생성될 때 호출되며, **`sessionDestroyed`** 메서드는 세션이 소멸될 때 호출됩니다.
+
+```java
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+public class MySessionListener implements HttpSessionListener {
+    @Override
+    public void sessionCreated(HttpSessionEvent se) {
+        // 세션이 생성될 때 수행할 작업
+    }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        // 세션이 소멸될 때 수행할 작업
+    }
+}
+```
+
+**ServletRequestListener (서블릿 리스너):**
+
+- 개별 서블릿 요청의 생명주기 이벤트를 처리합니다.
+- 요청이 시작되거나 종료될 때의 이벤트를 처리할 수 있습니다.
+- **`requestInitialized`** 메서드는 요청이 시작될 때 호출되며, **`requestDestroyed`** 메서드는 요청이 종료될 때 호출됩니다.
+```java
+import javax.servlet.ServletRequestEvent;
+import javax.servlet.ServletRequestListener;
+
+public class MyRequestListener implements ServletRequestListener {
+    @Override
+    public void requestInitialized(ServletRequestEvent sre) {
+        // 요청이 시작될 때 수행할 작업
+    }
+
+    @Override
+    public void requestDestroyed(ServletRequestEvent sre) {
+        // 요청이 종료될 때 수행할 작업
+    }
+}
+```
