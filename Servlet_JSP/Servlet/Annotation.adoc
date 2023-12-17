@@ -1,0 +1,40 @@
+# Annotation
+
+- @WebServlet
+- @WebInitParam
+- @WebFilter
+- @WebListener
+- @MultipartConfig
+
+### **@WebServlet (서블릿):**
+
+**`@WebServlet`** 어노테이션은 서블릿 클래스를 선언적으로 등록할 때 사용됩니다. 서블릿 클래스에 직접 어노테이션을 붙여서 사용합니다.
+
+```java
+@WebServlet(name = "MyServlet", urlPatterns = "/myservlet")
+```
+
+### **@WebFilter (필터):**
+
+**`@WebFilter`** 어노테이션은 필터 클래스를 선언적으로 등록할 때 사용됩니다. 필터 클래스에 어노테이션을 붙여서 사용합니다.
+
+```java
+@WebFilter(filterName = "MyFilter", urlPatterns = "/myservlet", initParams = @WebInitParam(name = "paramName", value = "paramValue"))
+```
+
+### **3. @WebListener (리스너):**
+
+**`@WebListener`** 어노테이션은 리스너 클래스를 선언적으로 등록할 때 사용됩니다. 리스너 클래스에 어노테이션을 붙여서 사용합니다.
+
+```java
+@WebListener
+public class MyContextListener implements ServletContextListener {
+    public void contextInitialized(ServletContextEvent sce) {
+        // 웹 애플리케이션이 초기화될 때 수행할 작업
+    }
+
+    public void contextDestroyed(ServletContextEvent sce) {
+        // 웹 애플리케이션이 종료될 때 수행할 작업
+    }
+}
+```
