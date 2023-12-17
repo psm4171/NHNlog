@@ -1,0 +1,114 @@
+# Servlet Context
+
+Servlet Container의 실행 환경 
+
+- Servlet과 Servlet Container 간에 연동을 위해 사용한다.
+- 웹 어플리케이션마다 하나의 ServletContext를 생성한다.
+- 하나의 웹 어플리케이션에 포함된 Servlet들은 동일한 ServletContext를 공유한다.
+
+**HttpServletRequest** 
+
+- http 프로토콜의 request 정보를 서블릿에게 전달하기 위해 사용한다.
+- 헤더정보, 파라미터, 쿠키, uri, url 등의 정보를 읽어 들이는 메서드를 포함한다.
+
+ServletRequest API 
+
+```java
+public interface ServletRequest {
+    Object getAttribute(String var1);
+    void setAttribute(String var1, Object var2);
+
+    String getParameter(String var1);
+
+    Locale getLocale();
+
+    String getContentType();
+
+    int getContentLength();
+    long getContentLengthLong();
+
+    BufferedReader getReader() throws IOException;
+
+    ServletInputStream getInputStream() throws IOException;
+    //...
+}
+```
+
+httpServletRequest API 
+
+```java
+public interface HttpServletRequest extends ServletRequest {
+    String getMethod();
+    String getPathInfo();
+    String getServletPath();
+    String getContextPath();
+    String getRequestURI();
+    StringBuffer getRequestURL();
+    String getHeader(String var1);
+    Cookie[] getCookies();
+    HttpSession getSession(boolean var1);
+    HttpSession getSession();
+    //...
+}
+```
+
+**HttpServletResponse**
+
+- 요청을 보낸 클라이언트에게 응답을 보내기 위해 WAS에서 생성되어 서블릿에게 전달된다.
+- 서블릿은 이 객체를 이용하여 content type, 응답코드, 응답 메시지 등을 전송
+
+ServletResponse API 
+
+```java
+public void setLocale(Locale loc);
+
+public void setCharacterEncoding(String charset);
+
+public void setContentType(String type);
+
+public void setContentLength(int len);
+public void setContentLengthLong(long len);
+
+public PrintWriter getWriter() throws IOException;
+public ServletOutputStream getOutputStream() throws IOException;
+
+public void setBufferSize(int size);
+public int getBufferSize();
+public void flushBuffer() throws IOException;
+public void resetBuffer();
+
+public boolean isCommitted();
+```
+
+HttpServletResponse API
+
+```java
+public void setHeader(String name, String value);
+public void addHeader(String name, String value);
+
+public void setStatus(int sc);
+
+public void sendError(int sc, String msg) throws IOException;
+
+public void sendRedirect(String location) throws IOException;
+
+public void addCookie(Cookie cookie);
+```
+
+### RequestDispatcher
+
+Java Servlet API에서 제공하는 인터페이스, 주로 서블릿에서 다른 서블릿이나 JSP 페이지로 제어를 넘길 때 사용된다. 
+
+즉, 현재의 요청에 대한 정보를 저장했다가 다른 자원 등으로 전달하는 기능을 제공한다. 
+
+1. **forward(ServletRequest request, ServletResponse response) :** 
+
+현재의 서블릿이나 JSP 페이지의 실행을 중지하고, 지정된 요청과 응답 객체를 다른 서블릿이나 JSP 페이지로 전달한다. 
+
+이를 통해 다른 서블릿이나 JSP 페이지에서 결과를 생성하고 클라이언트에게 응답할 수 있다.
+
+1. **include(ServletRequest request, ServletResponse response)**
+
+다른 서블릿이나 JSP 페이지의 실행 결과를 현재의 서블릿이나 JSP 페이지에 포함시킨다. 
+
+즉, 현재의 응답에 다른 서블릿이나 JSP 페이지의 결과를 포함시켜 클라이언트에게 응답할 수 있다.
